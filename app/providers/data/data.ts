@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Storage, SqlStorage } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 /*
@@ -11,7 +11,27 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Data {
 
-  constructor(private http: Http) {}
+  storage: Storage;
 
+  constructor() {
+    this.storage = new Storage(SqlStorage, {name: 'checklist'});
+  }
+
+  getData(): Promise<any> {
+    return this.storage.get('checklists');
+  }
+
+  save(data): void {
+    let saveData = [];
+
+    // Remove observables
+    data.forEach((checklist) => {
+      saveData.push({
+        title: checklist.title,
+        items: checklist.itmes
+      });
+    });
+    let newData = JSON.stringify(saveData);
+    this.storage.set('checklists', newData);
+  }
 }
-

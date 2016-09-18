@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the ChecklistModel provider.
@@ -11,7 +12,60 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ChecklistModel {
 
-  constructor(private http: Http) {}
+  checklist: any;
+  checklistObserver: any;
 
+  constructor(public title: string, public items: any[]) {
+    this.items = items;
+
+    this.checklist = Observable.create(observer => {
+      this.checklistObserver = observer;
+    });
+  }
+
+  addItem(item) {
+    this.items.push({
+      title: item,
+      checked: false
+    });
+
+    this.checklistObserver.next(true);
+  }
+
+  removeItem(item) {
+    let index = this.items.indexOf(item);
+
+    if(index > -1) {
+      this.items.splice(index, 1);
+    }
+
+    this.checklistObserver.next(true);
+  }
+
+
+
+  // void used since no data is being returned
+
+  renameItem(item, title) : void {
+    let index = this.items.indexOf(item);
+
+    if(index > -1) {
+      this.items[index].title = title;
+    }
+
+    this.checklistObserver.next(true);
+
+  }
+
+  setTitle(title) : void {
+    this.title = title;
+    this.checklistObserver.next(true);
+
+  }
+
+  toggleItem(item) : void {
+    item.checked = !item.checked;
+    this.checklistObserver.next(true);
+
+  }
 }
-

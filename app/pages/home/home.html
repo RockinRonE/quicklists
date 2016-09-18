@@ -11,12 +11,12 @@
 
 <ion-content>
   <ion-list no-lines>
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let checklist of checklists">
 
       <button ion-item (click)="viewChecklist(checklist)">
         <ion-item-content>
-          TITLE GOES HERE
-          <span>0 items</span>
+          {{checklist.title}}
+          <span>{{checklist.items.length}} items</span>
         </ion-item-content>
       </button>
 
