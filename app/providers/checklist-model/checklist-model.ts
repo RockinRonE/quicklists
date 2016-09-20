@@ -23,7 +23,7 @@ export class ChecklistModel {
     });
   }
 
-  addItem(item) {
+  addItem(item): void {
     this.items.push({
       title: item,
       checked: false
@@ -32,7 +32,7 @@ export class ChecklistModel {
     this.checklistObserver.next(true);
   }
 
-  removeItem(item) {
+  removeItem(item): void {
     let index = this.items.indexOf(item);
 
     if(index > -1) {

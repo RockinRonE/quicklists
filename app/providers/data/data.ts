@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
 import { Storage, SqlStorage } from 'ionic-angular';
+import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+
 
 /*
   Generated class for the Data provider.
@@ -24,11 +25,12 @@ export class Data {
   save(data): void {
     let saveData = [];
 
+
     // Remove observables
     data.forEach((checklist) => {
       saveData.push({
         title: checklist.title,
-        items: checklist.itmes
+        items: checklist.items
       });
     });
     let newData = JSON.stringify(saveData);
