@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar secondary>
     <ion-title>
-      <img src="images/logo.png" alt="" />
+      <img src="images/logo.png" class="logo"/>
     </ion-title>
     <ion-buttons end>
       <button (click)="addChecklist()"><ion-icon name="add-circle"></ion-icon></button>
@@ -11,12 +11,12 @@
 
 <ion-content>
   <ion-list no-lines>
-    <ion-item-sliding *ngFor="let checklist of checklists">
+    <ion-item-sliding *ngFor="let checklist of checklists" class="home-sliding-item">
 
-      <button ion-item (click)="viewChecklist(checklist)">
+      <button ion-item (click)="viewChecklist(checklist)" class="home-item">
         <ion-item-content>
           {{checklist.title}}
-          <span>{{checklist.items.length}} items</span>
+          <span class="secondary-detail">{{checklist.items.length}} items</span>
         </ion-item-content>
       </button>
 

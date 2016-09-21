@@ -10,3 +10,15 @@
 @import "../pages/home/home";
 @import "../pages/intro/intro";
 @import "../pages/checklist/checklist";
+
+ion-content {
+  background-color: #32db64;
+}
+
+.logo {
+  max-height: 39px;
+}
+
+button {
+  border: none!important; 
+}
