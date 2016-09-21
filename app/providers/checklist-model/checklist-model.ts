@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/Observable';
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
+
 export class ChecklistModel {
 
   checklist: any;

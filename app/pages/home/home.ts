@@ -11,6 +11,7 @@ export class HomePage {
   checklists: ChecklistModel[] = [];
 
   constructor(public nav: NavController, public dataService: Data, public alertCtrl: AlertController) {
+
     this.dataService.getData().then((checklists) => {
 
       let savedChecklists: any = false;
@@ -22,7 +23,7 @@ export class HomePage {
       if(savedChecklists) {
         savedChecklists.forEach((savedChecklist) => {
           let loadChecklist = new ChecklistModel(savedChecklist.title, savedChecklist.items);
-          
+
           this.checklists.push(loadChecklist);
 
           loadChecklist.checklist.subscribe(update => {

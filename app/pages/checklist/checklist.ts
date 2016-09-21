@@ -32,8 +32,7 @@ export class ChecklistPage {
         {
           text: 'Cancel'
         },
-
-      {
+        {
         text: 'Save',
         handler: data => {
           this.checklist.addItem(data.name);
