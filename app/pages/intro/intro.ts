@@ -11,12 +11,12 @@ export class IntroPage {
 
   constructor(public nav: NavController) {
     this.slideOptions = {
-      pager: true
+      // pager: true
     };
   }
 
   goToHome(): void {
-    this.nav.setRoot(HomePage); 
+    this.nav.setRoot(HomePage);
   }
 
 }

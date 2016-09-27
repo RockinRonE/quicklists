@@ -33,7 +33,7 @@ export class HomePage {
 
       if(savedChecklists) {
         savedChecklists.forEach((savedChecklist) => {
-          let loadChecklist = new ChecklistModel(savedChecklist.title, savedChecklist.items);
+          let loadChecklist = new ChecklistModel(savedChecklist.title, savedChecklist.items, new Date());
 
           this.checklists.push(loadChecklist);
 
@@ -63,7 +63,7 @@ export class HomePage {
         {
           text: 'Save',
           handler: data => {
-            let newChecklist = new ChecklistModel(data.name, []);
+            let newChecklist = new ChecklistModel(data.name, [], new Date());
             this.checklists.push(newChecklist);
 
             newChecklist.checklist.subscribe(update => {
