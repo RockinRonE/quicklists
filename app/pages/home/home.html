@@ -16,8 +16,14 @@
       <button ion-item (click)="viewChecklist(checklist)" class="home-item">
         <ion-item-content>
           {{checklist.title}}
-          <span class="secondary-detail">{{checklist.items.length}} items</span>
-          <span class="secondary-detail">Date Created: {{checklist.date | date:"MM/dd/yy"}} </span>
+          <span class="secondary-detail" ng-model="count">{{checklist.items.length}} items</span>
+          <span class="secondary-detail">Created: {{checklist.date | date}} </span>
+          <ng-pluralize count="count" when="{
+            '0': 'items',
+            '1': 'item',
+            '2': 'items'
+          }">
+        </ng-pluralize>
         </ion-item-content>
       </button>
 
