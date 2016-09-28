@@ -5,9 +5,12 @@ import { ChecklistModel } from '../../providers/checklist-model/checklist-model'
 import { Data } from '../../providers/data/data';
 import { IntroPage } from '../intro/intro';
 
+import { PluralItem } from '../../pipes/plural-item';
+
 
 @Component({
-  templateUrl: 'build/pages/home/home.html'
+  templateUrl: 'build/pages/home/home.html',
+  pipes: [PluralItem]
 })
 export class HomePage {
   checklists: ChecklistModel[] = [];
@@ -22,6 +25,7 @@ export class HomePage {
         this.nav.setRoot(IntroPage);
       }
     });
+
 
     this.dataService.getData().then((checklists) => {
 
