@@ -5,7 +5,7 @@ import { Pipe } from '@angular/core';
 })
 
 export class PluralItem {
-  transform(value, args) {
+  transform(value) {
     if (value == 0) {
       return 'No Items';
     } else if (value == 1) {
