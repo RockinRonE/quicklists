@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar secondary>
     <ion-title>
-      {{checklist.title}}
+      {{checklist.title}} {{getItemsCount()}}
     </ion-title>
     <ion-buttons end>
       <button (click)="uncheckItems()"><ion-icon name="refresh-circle"></ion-icon></button>
