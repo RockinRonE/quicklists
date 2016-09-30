@@ -143,8 +143,9 @@ export class HomePage {
         if(item.checked) {
           count++;
         }
-        return count;
       });
+    });
+    return count;
   }
 
   save(): void {
