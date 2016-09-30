@@ -13,8 +13,10 @@ import { PluralItem } from '../../pipes/plural-item';
   pipes: [PluralItem]
 })
 export class HomePage {
+
   checklists: ChecklistModel[] = [];
   local: Storage;
+
 
   constructor(public nav: NavController, public dataService: Data, public alertCtrl: AlertController) {
     this.local = new Storage(LocalStorage);
@@ -37,7 +39,8 @@ export class HomePage {
 
       if(savedChecklists) {
         savedChecklists.forEach((savedChecklist) => {
-          let loadChecklist = new ChecklistModel(savedChecklist.title, savedChecklist.items, new Date());
+         //  may need to remove date
+          let loadChecklist = new ChecklistModel(savedChecklist.title, savedChecklist.items, savedChecklist.date);
 
           this.checklists.push(loadChecklist);
 
@@ -128,7 +131,21 @@ export class HomePage {
     }
   }
 
-  
+  getItemsCount(): number {
+    let count = 0;
+    // grab checklists from line 17, iterate to get individual checklist
+    this.checklists.forEach((checklist) => {
+      // a checklist has an array of items
+      let arrayItems = checklist.items;
+      // iterate over items
+      arrayItems.forEach((item) => {
+        // if it's checked
+        if(item.checked) {
+          count++;
+        }
+        return count;
+      });
+  }
 
   save(): void {
     this.dataService.save(this.checklists);

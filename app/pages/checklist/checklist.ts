@@ -87,14 +87,14 @@ export class ChecklistPage {
     });
   }
 
-  getItemsCount(): number {
-    let count = 0;
-    this.checklist.items.forEach((item) => {
-      if(item.checked) {
-        count++;
-      }
-    });
-    return count;
-  }
+  // getItemsCount(): number {
+  //   let count = 0;
+  //   this.checklist.items.forEach((item) => {
+  //     if(item.checked) {
+  //       count++;
+  //     }
+  //   });
+  //   return count;
+  // }
 
 }
