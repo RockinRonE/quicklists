@@ -1,5 +1,5 @@
 # Quicklists
-Quicklists is a complex todo app. It consists of checklists that contain items that you can check of as being done. You can restart a checklist by hitting the refresh button to reset everything. 
+Quicklists is a complex todo app built with Ionic 2 and Angular2. It consists of checklists that contain items that you can check of as being done. You can restart a checklist by hitting the refresh button to reset everything. 
 
 ### Concepts Learned
     - Complex Lists
