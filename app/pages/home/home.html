@@ -17,8 +17,8 @@
           {{checklist.title}}
           <span class="secondary-detail">{{checklist.items.length | pluralItem }} </span>
           <span class="secondary-detail">Created: {{checklist.date | date}} </span>
-          <span class="secondary-detail">{{getItemsCount(checklist)}}</span>
-
+          <!-- <span class="secondary-detail">{{getItemsCount(checklist)}}</span> -->
+          <progress max="{{checklist.items.length}}" value="{{getItemsCount(checklist)}}"></progress>
         </ion-item-content>
       </button>
 

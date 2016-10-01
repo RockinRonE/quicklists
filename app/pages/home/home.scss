@@ -16,3 +16,36 @@
   font-weight: 400;
   margin-top: 10px;
 }
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 100%;
+  margin-top: 5px;
+
+}
+
+progress::-webkit-progress-bar {
+  background-color: #C5E3BF;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+progress::-webkit-progress-value {
+  // background: #f7ff00; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to left, #f7ff00 , #db36a4); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to left, #f7ff00 , #db36a4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-image:
+	   -webkit-linear-gradient(-45deg,
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%,
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top,
+	                           rgba(255, 255, 255, .25),
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #f7ff00 , #db36a4);
+
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
