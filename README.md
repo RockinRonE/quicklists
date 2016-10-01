@@ -13,10 +13,10 @@ Quicklists is a complex todo app. It consists of checklists that contain items t
     - Theming 
     
 ### The App
-The Homepage
-
-Checklist Page
-
+####The Homepage
+![Home Page](https://github.com/RockinRonE/quicklists/blob/master/www/images/homepage.png)
+####Checklist Page
+![Checklist Page](https://github.com/RockinRonE/quicklists/blob/master/www/images/checklist-page.png)
 ### Installation
 
 You'll need the Ionic CLI with support for v2 apps:
