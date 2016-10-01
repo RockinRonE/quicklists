@@ -17,7 +17,7 @@
           {{checklist.title}}
           <span class="secondary-detail">{{checklist.items.length | pluralItem }} </span>
           <span class="secondary-detail">Created: {{checklist.date | date}} </span>
-          {{getItemsCount()}}
+          <span class="secondary-detail">{{getItemsCount(checklist)}}</span>
 
         </ion-item-content>
       </button>

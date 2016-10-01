@@ -131,19 +131,14 @@ export class HomePage {
     }
   }
 
-  getItemsCount(): number {
+  getItemsCount(checklist): number {
+    let itemsArray = checklist.items;
     let count = 0;
-    // grab checklists from line 17, iterate to get individual checklist
-    this.checklists.forEach((checklist) => {
-      // a checklist has an array of items
-      let arrayItems = checklist.items;
-      // iterate over items
-      arrayItems.forEach((item) => {
-        // if it's checked
-        if(item.checked) {
-          count++;
-        }
-      });
+
+    itemsArray.forEach((item) => {
+      if(item.checked) {
+        count++;
+      }
     });
     return count;
   }
