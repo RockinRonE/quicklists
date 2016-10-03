@@ -18,7 +18,7 @@ export class ChecklistModel {
 
   constructor(public title: string, public items: any[], public date: Date) {
     this.items = items;
-    this.date = new Date();
+    this.date = date;
 
     this.checklist = Observable.create(observer => {
       this.checklistObserver = observer;
