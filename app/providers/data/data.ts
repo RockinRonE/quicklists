@@ -30,7 +30,8 @@ export class Data {
     data.forEach((checklist) => {
       saveData.push({
         title: checklist.title,
-        items: checklist.items
+        items: checklist.items,
+        date: checklist.date
       });
     });
     let newData = JSON.stringify(saveData);
